@@ -1,10 +1,8 @@
-import React from 'react';
+import Heading from "../components/Heading";
 
 const Home = () => {
     return (
-        <h1>
-          Hello Next TS
-        </h1>
+        <Heading text="Hello Next TS" />
     );
 };
 

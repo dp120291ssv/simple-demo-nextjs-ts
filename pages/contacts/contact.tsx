@@ -1,14 +1,11 @@
 import React from 'react';
+import Heading from "../../components/Heading";
 
 const Contact = () => {
     return (
         <>
-            <h1>
-                Single Contact
-            </h1>
-            <p>
-                test@gmail.com
-            </p>
+            <Heading>Single Contact</Heading>
+            <p>test@gmail.com</p>
         </>
 
     );

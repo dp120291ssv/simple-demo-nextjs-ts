@@ -1,10 +1,11 @@
-import React from 'react';
+import Heading from "../components/Heading";
 
 const NotFound = () => {
     return (
-        <h1>
-          404 NOT FOUND | Ups.. this page is not found
-        </h1>
+        <>
+            <Heading text="404 Not Found"/>
+            <Heading tag="h3" text="Ups.. this page is not found"/>
+        </>
     );
 };
 
