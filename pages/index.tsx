@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss'
 const Home = () => {
     return (
         <div className={styles.wrapper}>
-            <Heading text="Demo Next.js App"/>
+            <Heading text="Demo Next.js application"/>
         </div>
     );
 };
