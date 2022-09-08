@@ -3,7 +3,7 @@ import Heading from "./Heading";
 const Footer = () => {
     return (
         <footer>
-            <Heading tag="h3" text="Created with love"/>
+            <Heading tag="h3" text='Site is made "on the knee"'/>
         </footer>
     );
 };
