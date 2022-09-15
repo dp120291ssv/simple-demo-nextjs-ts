@@ -9,7 +9,6 @@ const Contacts = () => {
             <p>test@gmail.com</p>
             <p>test@gmail.com</p>
         </>
-
     );
 };
 
