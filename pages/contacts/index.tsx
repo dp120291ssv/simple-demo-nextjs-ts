@@ -1,6 +1,6 @@
-import React from "react";
 import Heading from "../../components/Heading";
 import Head from "next/head";
+import Link from 'next/link';
 import {useEffect, useState} from "react";
 
 export const getStaticProps = async() => {
@@ -22,10 +22,18 @@ export const getStaticProps = async() => {
     }
 }
 
+export type ContactAddress = {
+    street: string;
+    suite: string;
+    zipcode: string;
+    city: string;
+}
+
 export type Contact = {
     id: string;
     name: string;
     email: string;
+    address: ContactAddress
 }
 
 export type ContactsProps = {
@@ -53,9 +61,9 @@ const Contacts = ({contacts}: ContactsProps) => {
                 <title>Contacts</title>
             </Head>
             <Heading text="Contacts List:" />
-            {contacts && contacts.map(({id, name, email}) => (
+            {contacts && contacts.map(({id, name}) => (
                 <li key={id}>
-                    <strong>{name}</strong> ({email})
+                   <Link href={`/contacts/${id}`}><strong>{name}</strong></Link>
                 </li>
             ))}
         </>
