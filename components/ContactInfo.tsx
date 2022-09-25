@@ -19,6 +19,8 @@ const ContactInfo = ({contact}: ContactProps) => {
             <div>
                 <strong>Email: </strong>
                 {email}
+            </div>
+            <div>
                 <strong>Address: </strong>
                 {`${street} ${suite} ${city} ${zipcode}`}
             </div>
