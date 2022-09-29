@@ -2,7 +2,7 @@ import Head from 'next/head';
 import ContactInfo from "../../components/ContactInfo";
 import {Contact} from "./index";
 
-export const getServerSideProps = async(context) => {
+export const getServerSideProps = async(context: { params: { id: number | string; }; }) => {
     const {id} = context.params
     const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     const data = await response.json();
