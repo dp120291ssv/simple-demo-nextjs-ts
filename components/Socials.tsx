@@ -8,7 +8,7 @@ export type SocialsItemsProps = {
 const SocialsItems = ({socials}: SocialsItemsProps) => {
     return (
         <div>
-            {socials && socials.map(model => model.id)}
+
         </div>
     );
 };
