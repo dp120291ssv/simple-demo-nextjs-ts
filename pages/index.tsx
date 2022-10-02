@@ -1,6 +1,8 @@
 import Heading from "../components/Heading";
 import styles from '../styles/Home.module.scss'
 import Head from "next/head";
+import {Socials} from './api/socials';
+import SocialsItems from "../components/Socials";
 
 export const getStaticProps = async () => {
     const response = await fetch('http://localhost:3000/api/socials');
@@ -19,14 +21,18 @@ export const getStaticProps = async () => {
     }
 }
 
-const Home = ({socials}) => {
+export type HomeProps = {
+    socials: Socials;
+}
+
+const Home = ({socials}: HomeProps) => {
     return (
         <div className={styles.wrapper}>
             <Head>
                 <title>Home</title>
             </Head>
             <Heading text="Demo Next.js application"/>
-            <Socials socials={socials}/>
+            <SocialsItems socials={socials}/>
         </div>
 
     );

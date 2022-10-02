@@ -2,7 +2,7 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 import {socials} from './data/socials';
 
-type Socials = {
+export type Socials = {
     id: number;
     icon: string;
     path: string;
