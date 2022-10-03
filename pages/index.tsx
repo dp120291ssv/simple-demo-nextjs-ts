@@ -5,7 +5,7 @@ import {Socials} from './api/socials';
 import SocialsItems from "../components/Socials";
 
 export const getStaticProps = async () => {
-    const response = await fetch('http://localhost:3000/api/socials');
+    const response = await fetch(`${process.env.API_HOST}/api/socials`);
     const data = await response.json();
     // const data = null;
     /**
@@ -31,7 +31,7 @@ const Home = ({socials}: HomeProps) => {
             <Head>
                 <title>Home</title>
             </Head>
-            <Heading text="Demo Next.js application"/>
+            <Heading text="Next.js App"/>
             <SocialsItems socials={socials}/>
         </div>
 

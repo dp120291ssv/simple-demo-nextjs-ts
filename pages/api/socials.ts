@@ -13,5 +13,7 @@ export default function handler(
     res: NextApiResponse<Socials>
 ) {
     console.log('res', res.json(socials))
-    res.status(200).json(socials)
+    if (req.method === 'GET') {
+        res.status(200).json(socials)
+    }
 }
