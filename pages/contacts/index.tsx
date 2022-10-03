@@ -1,7 +1,7 @@
 import Heading from "../../components/Heading";
 import Head from "next/head";
 import Link from 'next/link';
-import {useEffect, useState} from "react";
+import {contactType} from "../../types";
 
 export const getStaticProps = async() => {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -20,22 +20,8 @@ export const getStaticProps = async() => {
     }
 }
 
-export type ContactAddress = {
-    street: string;
-    suite: string;
-    zipcode: string;
-    city: string;
-}
-
-export type Contact = {
-    id: string;
-    name: string;
-    email: string;
-    address: ContactAddress
-}
-
 export type ContactsProps = {
-    contacts: Array<Contact>
+    contacts: Array<contactType>
 }
 
 const Contacts = ({contacts}: ContactsProps) => {
