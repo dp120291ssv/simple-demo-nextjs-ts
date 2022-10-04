@@ -1,8 +1,11 @@
+import {FC} from 'react';
+import {GetStaticPaths} from "next";
+import {GetStaticProps} from "next";
 import Head from 'next/head';
 import PostInfo from "../../components/PostInfo";
-import {Post} from './index'
+import {PostType} from "../../types";
 
-export const getStaticPaths = async() => {
+export const getStaticPaths: GetStaticPaths = async() => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
     const data = await response.json();
 
@@ -16,8 +19,8 @@ export const getStaticPaths = async() => {
     }
 }
 
-export const getStaticProps = async(context: { params: { id: any; }; }) => {
-    const {id} = context.params
+export const getStaticProps: GetStaticProps = async(context) => {
+    const {id} = context.params as any;
     const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
     const data = await response.json();
     // const data = null;
@@ -35,10 +38,10 @@ export const getStaticProps = async(context: { params: { id: any; }; }) => {
 }
 
 export type PostProps = {
-    post: Post;
+    post: PostType;
 }
 
-const Post = ({post}: PostProps) => {
+const Post: FC<PostProps> = ({post}) => {
     return (
         <>
             <Head>

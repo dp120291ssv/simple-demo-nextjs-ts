@@ -1,10 +1,10 @@
+import {FC, useEffect} from "react";
 import Heading from "../components/Heading";
-import React, {useEffect} from "react";
 import {useRouter} from "next/router";
 import styles from '../styles/404.module.scss'
 import Head from "next/head";
 
-const NotFound = () => {
+const NotFound: FC = () => {
     const router = useRouter();
 
     useEffect(() => {

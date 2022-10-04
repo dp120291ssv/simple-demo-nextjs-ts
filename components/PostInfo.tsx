@@ -1,11 +1,12 @@
+import {FC} from 'react';
 import Heading from "./Heading";
-import {Post} from '../pages/posts'
+import {PostType} from "../types";
 
-export type PropTypes = {
-    post: Post;
+export type PostInfoProps = {
+    post: PostType;
 }
 
-const PostInfo = ({post}: PropTypes) => {
+const PostInfo: FC<PostInfoProps> = ({post}) => {
     const {title, body} = post || {};
 
     if (!post) {

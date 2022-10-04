@@ -1,16 +1,18 @@
+import {FC} from 'react';
+import {GetServerSideProps} from "next";
 import Head from 'next/head';
 import ContactInfo from "../../components/ContactInfo";
-import {Contact} from "./index";
+import {ContactType} from "../../types";
 
-export const getServerSideProps = async(context: { params: { id: number | string; }; }) => {
-    const {id} = context.params
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const {id} = context.params as any;
     const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     const data = await response.json();
     // const data = null;
     /**
      * для перехвата ошибок, например если data = null
      * */
-    if(!data){
+    if (!data) {
         return {
             notFound: true,
         }
@@ -21,10 +23,10 @@ export const getServerSideProps = async(context: { params: { id: number | string
 }
 
 export type ContactProps = {
-    contact: Contact;
+    contact: ContactType;
 }
 
-const Contact = ({contact}: ContactProps) => {
+const Contact: FC<ContactProps> = ({contact}) => {
     return (
         <>
             <Head>

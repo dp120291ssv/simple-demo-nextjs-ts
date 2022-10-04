@@ -1,4 +1,7 @@
-const Heading = ({tag, text}: any) => {
+import {FC} from 'react';
+import {HeadingType} from "../types";
+
+const Heading: FC<HeadingType> = ({tag, text}: any) => {
     const Tag = tag || 'h1'
     return <Tag>{text}</Tag>
 };

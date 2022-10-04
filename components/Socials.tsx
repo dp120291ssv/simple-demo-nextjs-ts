@@ -1,19 +1,20 @@
-import React from 'react';
-import {Socials} from '../pages/api/socials'
+import {FC} from 'react';
 import Head from "next/head";
 import styles from '../styles/Socials.module.scss';
+import {SocialsType} from "../types";
 
 export type SocialsItemsProps = {
-    socials: Socials;
+    socials: SocialsType;
 }
 
-const SocialsItems = ({socials}: SocialsItemsProps) => {
+const SocialsItems: FC<SocialsItemsProps> = ({socials} ) => {
     return (
         <>
             {socials ?
                 <div>
                     <Head>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.css" />
+                        <link rel="stylesheet"
+                              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.css"/>
                     </Head>
                     <ul className={styles.socials}>
                         {socials && socials.map(({id, icon, path}) => (

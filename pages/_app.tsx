@@ -1,11 +1,12 @@
+import {FC} from 'react';
 import type {AppProps} from 'next/app'
 import Layout from "../components/Layout";
+import Head from "next/head";
 import '../styles/globals.scss'
 import Image from 'next/image'
 import boratImg from '../public/borat.webp'
-import Head from "next/head";
 
-const MyApp = ({Component, pageProps}: AppProps) => (
+const MyApp: FC<AppProps> = ({Component, pageProps}) => (
     <Layout>
         <Head>
             <link
