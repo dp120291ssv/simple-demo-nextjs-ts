@@ -7,8 +7,8 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<SocialsType>
 ) {
-    console.log('res', res.json(socials))
     if (req.method === 'GET') {
         res.status(200).json(socials)
+        console.log('res', res.json(socials))
     }
 }

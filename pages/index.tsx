@@ -34,6 +34,7 @@ export type HomeProps = {
 }
 
 const Home: FC<HomeProps> = ({socials}) => {
+    console.log('socials', socials)
     return (
         <div className={styles.wrapper}>
             <Head>
