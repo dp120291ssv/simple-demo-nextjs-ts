@@ -49,7 +49,7 @@ const Contacts: FC<ContactsProps> = ({contacts}) => {
             <Heading text="Contacts List:" />
             {contacts && contacts.map(({id, name}) => (
                 <li key={id}>
-                   <Link href={`/contacts/${id}`}><strong>{name}</strong></Link>
+                   <Link href={`/contacts/${id}`}>{name}</Link>
                 </li>
             ))}
         </>
