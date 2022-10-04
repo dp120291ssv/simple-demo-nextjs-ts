@@ -7,19 +7,25 @@ import {GetStaticProps} from "next";
 import {SocialsType} from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
-    const response = await fetch(`${process.env.API_HOST}/api/socials`);
-    const data = await response.json();
-    // const data = null;
-    /**
-     * для перехвата ошибок, например если data = null
-     * */
-    if (!data) {
-        return {
-            notFound: true,
+    try {
+        const response = await fetch(`${process.env.API_HOST}/api/socials`);
+        const data = await response.json();
+        // const data = null;
+        /**
+         * для перехвата ошибок, например если data = null
+         * */
+        if (!data) {
+            return {
+                notFound: true,
+            }
         }
-    }
-    return {
-        props: {socials: data}
+        return {
+            props: {socials: data}
+        }
+    } catch {
+        return {
+            props: {socials: null}
+        }
     }
 }
 
