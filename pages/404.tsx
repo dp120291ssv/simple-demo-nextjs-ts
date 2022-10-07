@@ -5,13 +5,13 @@ import styles from '../styles/404.module.scss'
 import Head from "next/head";
 
 const NotFound: FC = () => {
-    const router = useRouter();
-
-    useEffect(() => {
-        setTimeout(() => {
-            router.push('/')
-        }, 2000)
-    }, [router])
+    // const router = useRouter();
+    //
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         router.push('/')
+    //     }, 2000)
+    // }, [router])
 
     return (
         <div className={styles.wrapper}>
