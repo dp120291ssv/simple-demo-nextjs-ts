@@ -3,8 +3,6 @@ import type {AppProps} from 'next/app'
 import Layout from "../components/Layout";
 import Head from "next/head";
 import '../styles/globals.scss'
-import Image from 'next/image'
-import boratImg from '../public/borat.webp'
 
 const MyApp: FC<AppProps> = ({Component, pageProps}) => (
     <Layout>
@@ -16,7 +14,6 @@ const MyApp: FC<AppProps> = ({Component, pageProps}) => (
         <main>
             <Component {...pageProps} />
         </main>
-        {/*<Image src={boratImg} width={500} height={900} alt="preview" placeholder="blur"  />*/}
     </Layout>
 )
 
